@@ -1,6 +1,7 @@
 package fr.android.androidexercises
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ListView
 import android.widget.Toast
@@ -30,10 +31,10 @@ class LibraryActivity : AppCompatActivity(), LibraryPresenter.BookReceiver, Book
     }
 
     override fun userWantToBuyBook(book: Book) {
-        Toast.makeText(this, "Shop Not Available for " + book.title, Toast.LENGTH_LONG)
+        Toast.makeText(this, "Shop Not Available for " + book.title, Toast.LENGTH_LONG).show()
     }
 
     override fun userWantToGetInfoOnBook(book: Book) {
-        Toast.makeText(this, "Get description for " + book.title, Toast.LENGTH_LONG)
+        Toast.makeText(this, "Get description for " + book.title, Toast.LENGTH_LONG).show()
     }
 }
