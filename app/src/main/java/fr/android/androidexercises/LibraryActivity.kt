@@ -1,10 +1,13 @@
 package fr.android.androidexercises
 
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ListView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
-class LibraryActivity : AppCompatActivity(), LibraryPresenter.BookReceiver {
+class LibraryActivity : AppCompatActivity(), LibraryPresenter.BookReceiver, BookItemView.BookBuyer, BookItemView.BookDescriptionHandler {
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,6 +17,8 @@ class LibraryActivity : AppCompatActivity(), LibraryPresenter.BookReceiver {
         val presenter = LibraryPresenter()
 
         presenter.init(this, this)
+
+
     }
 
     override fun OnBookReceived(books: List<Book>){
@@ -24,7 +29,11 @@ class LibraryActivity : AppCompatActivity(), LibraryPresenter.BookReceiver {
         listView.adapter = adapter
     }
 
-    override fun GetBooks(books: List<Book>){
+    override fun userWantToBuyBook(book: Book) {
+        Toast.makeText(this, "Shop Not Available for " + book.title, Toast.LENGTH_LONG)
+    }
 
+    override fun userWantToGetInfoOnBook(book: Book) {
+        Toast.makeText(this, "Get description for " + book.title, Toast.LENGTH_LONG)
     }
 }

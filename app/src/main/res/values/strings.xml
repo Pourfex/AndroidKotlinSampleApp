@@ -2,4 +2,6 @@
     <string name="app_name">Library</string>
     <string name="action_settings">Settings</string>
     <string name="currency">€</string>
+    <string name="buy_it">Get It !</string>
+    <string name="show_more">Show More</string>
 </resources>

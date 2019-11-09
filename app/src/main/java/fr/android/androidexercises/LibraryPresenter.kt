@@ -37,6 +37,5 @@ class LibraryPresenter {
     interface BookReceiver{
 
         fun OnBookReceived(books : List<Book>)
-        fun GetBooks(books : List<Book>)
     }
 }
