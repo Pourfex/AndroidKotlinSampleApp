@@ -1,28 +1,39 @@
 package fr.android.androidexercises
 
 import android.content.Context
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 
 class BookAdapter(context: Context, private val books: List<Book>) : BaseAdapter() {
 
-    // TODO create variable with LayoutInflater.from()
+    val inflater = LayoutInflater.from(context)
 
     override fun getCount(): Int {
-        return 0 // TODO
+        return books.count()
     }
 
-    override fun getItem(position: Int): Book? {
-        return null // TODO
+    override fun getItem(position: Int): Book {
+        return books[position]
     }
 
     override fun getItemId(position: Int): Long {
-        return 0 // TODO
+        return getItem(position).hashCode().toLong()
     }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View? {
-        return null // TODO
+        var view = convertView
+
+        if (view == null) {
+            view = inflater.inflate(R.layout.item_view_book, parent, false)
+        }
+
+        var bookView = view as BookItemView
+        bookView.bindView(getItem(position))
+
+
+        return view
     }
 
 }

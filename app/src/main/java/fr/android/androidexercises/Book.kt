@@ -1,3 +1,3 @@
 package fr.android.androidexercises
 
-data class Book(val name: String, val price: Float)
+data class Book(val isbn: String, val title: String, val price: String, val cover: String)
