@@ -1,5 +1,6 @@
 package fr.android.androidexercises
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -36,5 +37,8 @@ class LibraryActivity : AppCompatActivity(), LibraryPresenter.BookReceiver, Book
 
     override fun userWantToGetInfoOnBook(book: Book) {
         Toast.makeText(this, "Get description for " + book.title, Toast.LENGTH_LONG).show()
+        val intent : Intent  = Intent(this, BookDetailActivity::class.java)
+        intent.putExtra(getString(R.string.detail_intent_key), book)
+        startActivity(intent);
     }
 }
