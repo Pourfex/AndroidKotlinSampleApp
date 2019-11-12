@@ -3,6 +3,7 @@ package fr.android.androidexercises.Global
 import android.os.Parcel
 import android.os.Parcelable
 
+//data class use for book as a DAO.
 data class Book(val isbn: String, val title: String, val price: String, val cover: String, val synopsis : Array<String>) : Parcelable {
     constructor(parcel: Parcel) : this(
             parcel.readString()!!,

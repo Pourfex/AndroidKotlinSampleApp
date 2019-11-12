@@ -26,6 +26,8 @@ class BookDetailActivity : AppCompatActivity(), BookItemView.BookBuyer {
 
         book = intent.getParcelableExtra(getString(R.string.detail_intent_key))
 
+
+        //Lot of boilerplate than can be erased with databinding.
         title = findViewById<TextView>(R.id.title_detail)
         price = findViewById<TextView>(R.id.price_details)
         description = findViewById<TextView>(R.id.book_description_details)

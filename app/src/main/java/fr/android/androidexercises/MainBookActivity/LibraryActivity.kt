@@ -11,8 +11,9 @@ import fr.android.androidexercises.MainBookActivity.View.BookAdapter
 import fr.android.androidexercises.MainBookActivity.View.BookItemView
 import fr.android.androidexercises.R
 
+//Main activity. Work with a presenter to get data from and a ListView to display them (adapter). Responsible of navigation
 class LibraryActivity : AppCompatActivity(), LibraryPresenter.BookReceiver, BookItemView.BookBuyer, BookItemView.BookDescriptionHandler {
-    
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_library)
