@@ -10,6 +10,12 @@ import fr.android.androidexercises.BookDetailActivity.BookDetailActivity
 import fr.android.androidexercises.MainBookActivity.View.BookAdapter
 import fr.android.androidexercises.MainBookActivity.View.BookItemView
 import fr.android.androidexercises.R
+import android.view.Menu
+import android.view.MenuItem
+import androidx.appcompat.widget.Toolbar
+
+
+
 
 //Main activity. Work with a presenter to get data from and a ListView to display them (adapter). Responsible of navigation
 class LibraryActivity : AppCompatActivity(), LibraryPresenter.BookReceiver, BookItemView.BookBuyer, BookItemView.BookDescriptionHandler {
@@ -17,7 +23,27 @@ class LibraryActivity : AppCompatActivity(), LibraryPresenter.BookReceiver, Book
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_library)
+        val toolbar = findViewById<Toolbar>(R.id.toolbar2)
+        setSupportActionBar(toolbar)
         LibraryPresenter().init(this, this)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.menu_library, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.getItemId()) {
+            R.id.action_home -> {
+                Toast.makeText(this, "Already at home", Toast.LENGTH_SHORT).show()
+            }
+            R.id.action_shop -> {
+                Toast.makeText(this, "Shop Not Available", Toast.LENGTH_LONG).show()
+            }
+        }
+        return true
     }
 
     override fun OnBookReceived(books: List<Book>){

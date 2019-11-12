@@ -4,9 +4,15 @@
       tools:context=".MainBookActivity.LibraryActivity">
 
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never"/>
+        android:id="@+id/action_shop"
+        android:title="@string/action_shop"
+        android:icon="@drawable/ic_home_24px"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_home"
+        android:icon="@drawable/ic_shopping_cart_24px"
+        android:title="@string/action_home"
+        app:showAsAction="always"/>
 
 </menu>
