@@ -8,4 +8,6 @@
     <string name="detail_intent_key">book</string>
     <string name="action_shop">action_shop</string>
     <string name="action_home">home</string>
+    <string name="bought_items">boughtItems</string>
+    <string name="detail_intent_items">shoppingNumbers</string>
 </resources>
