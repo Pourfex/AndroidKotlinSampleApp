@@ -18,6 +18,7 @@ import android.view.MenuItem
 import androidx.appcompat.widget.Toolbar
 import android.widget.TextView
 import androidx.core.view.MenuItemCompat
+import fr.android.androidexercises.ShopActivity.ShopActivity
 
 //Main activity. Work with a presenter to get data from and a ListView to display them (adapter). Responsible of navigation
 class LibraryActivity : AppCompatActivity(), LibraryPresenter.BookReceiver, BookItemView.BookBuyer, BookItemView.BookDescriptionHandler {
@@ -72,10 +73,10 @@ class LibraryActivity : AppCompatActivity(), LibraryPresenter.BookReceiver, Book
         when (item.getItemId()) {
             R.id.action_home -> {
                 Toast.makeText(this, "Already at home", Toast.LENGTH_SHORT).show()
-
             }
             R.id.action_shop -> {
-                Toast.makeText(this, "Shop Not Available", Toast.LENGTH_LONG).show()
+                val intent = Intent(this, ShopActivity::class.java)
+                startActivity(intent)
             }
         }
         return true
