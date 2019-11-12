@@ -1,4 +1,4 @@
-package fr.android.androidexercises
+package fr.android.androidexercises.BookDetailActivity
 
 import android.os.Bundle
 import android.util.Log
@@ -8,6 +8,9 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.squareup.picasso.Picasso
+import fr.android.androidexercises.Global.Book
+import fr.android.androidexercises.MainBookActivity.View.BookItemView
+import fr.android.androidexercises.R
 
 class BookDetailActivity : AppCompatActivity(), BookItemView.BookBuyer {
 

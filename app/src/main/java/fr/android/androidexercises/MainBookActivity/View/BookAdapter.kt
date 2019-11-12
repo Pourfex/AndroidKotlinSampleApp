@@ -1,10 +1,12 @@
-package fr.android.androidexercises
+package fr.android.androidexercises.MainBookActivity.View
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import fr.android.androidexercises.Global.Book
+import fr.android.androidexercises.R
 
 class BookAdapter(context: Context, private val books: List<Book>) : BaseAdapter() {
 

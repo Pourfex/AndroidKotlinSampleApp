@@ -1,6 +1,6 @@
-package fr.android.androidexercises
+package fr.android.androidexercises.MainBookActivity.Service
 
-import retrofit2.Call
+import fr.android.androidexercises.Global.Book
 import retrofit2.http.GET
 
 
